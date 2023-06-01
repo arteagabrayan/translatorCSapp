@@ -1,0 +1,2 @@
+# translatorCSapp
+Translator with AI
