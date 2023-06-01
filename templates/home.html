@@ -5,21 +5,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #222;
-            color: #fff;
+            background-color: #fff;
+            color: #333;
             padding: 40px;
         }
 
         .container {
             max-width: 500px;
-            background-color: #333;
+            background-color: #fff;
             border-radius: 10px;
             padding: 30px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
         }
 
         h1 {
             margin-bottom: 20px;
-            color: #fff;
+            color: #333;
+            text-align: center;
+        }
+
+        h5 {
+            color: #FF8800;
             text-align: center;
         }
 
@@ -29,83 +36,77 @@
 
         .form-group label {
             font-weight: bold;
-            color: #fff;
+            color: #333;
         }
 
         .form-control {
-            background-color: #555;
-            color: #fff;
+            background-color: #fafafa;
+            color: #333;
         }
 
         .btn-translate {
             width: 100%;
-            background-color: #0099ff;
-            border-color: #0099ff;
+            background-color: #FF8800;
+            border-color: #FF8800;
+            color: #fff;
         }
 
         .btn-translate:hover {
-            background-color: #0077cc;
-            border-color: #0077cc;
-        }
-
-        .translated-text {
-            margin-top: 20px;
-        }
-
-        .translated-text h2 {
+            background-color: #FF6B00;
+            border-color: #FF6B00;
             color: #fff;
         }
 
-        .translated-text p {
-            color: #ddd;
-        }
-
-        .lang-detected {
+        .translated-text, .lang-detected {
             margin-top: 20px;
+            border: 1px solid #FF8800;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #fafafa;
         }
 
-        .lang-detected h2 {
-            color: #fff;
+        .translated-text h2, .lang-detected h2 {
+            color: #FF8800;
         }
 
-        .lang-detected p {
-            color: #ddd;
+        .translated-text p, .lang-detected p {
+            color: #333;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>AI Translator</h1>
-        <h5>Cognitive Services Azure</h5>
+        <h5>Azure Cognitive Services</h5>
         <form method="POST">
             <div class="form-group">
-                <label for="text">Texto a traducir:</label>
+                <label for="text">Text to translate:</label>
                 <textarea class="form-control" id="text" name="text" rows="3" required></textarea>
             </div>
             <div class="form-group">
-                <label for="language">Idioma de destino:</label>
+                <label for="language">Target language:</label>
                 <select class="form-control" id="language" name="language">
-                    <option value="en">Inglés</option>
-                    <option value="es">Español</option>
-                    <option value="fr">Francés</option>
-                    <option value="de">Alemán</option>
-                    <!-- Agrega aquí más opciones de idioma según tus necesidades -->
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <!-- Add here more language options as per your needs -->
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary btn-translate">Traducir</button>
+            <button type="submit" class="btn btn-primary btn-translate">Translate</button>
         </form>
 
         {% if translated_text %}
         <div class="translated-text">
-            <h2>Texto traducido:</h2>
+            <h5>Translated text:</h5>
             <p>{{ translated_text }}</p>
         </div>
         {% endif %}
 
         {% if lang_detected %}
         <div class="lang-detected">
-            <h2>Idioma de entrada detectado:</h2>
-            <p>{% if lang_detected == "es" %}Español{% elif lang_detected == "en" %}Inglés{% elif lang_detected == "fr" %}Francés{% elif lang_detected == "de" %}Alemán{% else %}{{ lang_detected }}{% endif %}</p>
+            <h5>Detected input language:</h5>
+            <p>{% if lang_detected == "es" %}Spanish{% elif lang_detected == "en" %}English{% elif lang_detected == "fr" %}French{% elif lang_detected == "de" %}German{% else %}{{ lang_detected }}{% endif %}</p>
         </div>
         {% endif %}
     </div>
