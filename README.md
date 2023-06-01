@@ -8,16 +8,16 @@ This project is an application that uses AI technologies to perform translations
 
 This repository contains the following key files and directories:
 
-.github/ workflows: This directory contains GitHub workflow configurations.
-reviews: This directory contains files related to reviews.
-templates: This directory contains template files.
-.env: This file contains environment variables.
-.gitignore: This file specifies files that Git should ignore.
-README.md: This is the README file with information about the project and instructions.
-app.py: This is the main application file.
-info.txt: This file contains additional information.
-requirements.txt: This file lists the Python dependencies.
-startup.sh: This shell script starts the application.
+- .github/ workflows: This directory contains GitHub workflow configurations.
+- reviews: This directory contains files related to reviews.
+- templates: This directory contains template files.
+- .env: This file contains environment variables.
+- .gitignore: This file specifies files that Git should ignore.
+- README.md: This is the README file with information about the project and instructions.
+- app.py: This is the main application file.
+- info.txt: This file contains additional information.
+- requirements.txt: This file lists the Python dependencies.
+- startup.sh: This shell script starts the application.
 
 ## Languages used
 Languages used in this project include:
