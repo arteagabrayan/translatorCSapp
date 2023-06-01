@@ -22,9 +22,9 @@ This repository contains the following key files and directories:
 ## Languages used
 Languages used in this project include:
 
-HTML: 51.1%
-Python: 46.3%
-Shell: 2.6%
+- HTML
+- Python
+- Shell
 
 ## Installation
 
